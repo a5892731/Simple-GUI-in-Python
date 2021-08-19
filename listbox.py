@@ -13,8 +13,16 @@ def lb_command():
     x = listbox.get(listbox.curselection())
     print(x)
 
+def add():
+    listbox.insert(listbox.size(), entryBox.get())
+    listbox.config(height=listbox.size())
+
+def delete():
+    listbox.delete(listbox.curselection())
+    listbox.config(height=listbox.size())
+
 window = Tk() # instantiate an instance of a window
-window.geometry("420x420")
+
 
 listbox = Listbox(window, font = ("Times New Roman", 20))
 listbox.pack()
@@ -27,9 +35,20 @@ listbox.insert(5, "soup")
 listbox.insert(6, "crapy chicken")
 listbox.config(height = listbox.size())
 
+entryBox = Entry(window)
+entryBox.pack()
+
 submit_button = Button(window,  text = "submit", font = ("Times New Roman", 20),
                        command = lb_command)
 submit_button.pack()
+
+add_button = Button(window,  text = "add", font = ("Times New Roman", 20),
+                       command = add)
+add_button.pack()
+
+del_button = Button(window,  text = "del", font = ("Times New Roman", 20),
+                       command = delete)
+del_button.pack()
 
 #-------------------------------------------------------------
 window.mainloop() # place window on computer screen. listen for evants
