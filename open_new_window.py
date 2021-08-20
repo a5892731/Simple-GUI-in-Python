@@ -9,13 +9,14 @@
 
 from tkinter import *
 
-
+def create_window():
+    new_window = Toplevel() # new window on top
 
 window = Tk() # instantiate an instance of a window
 window.geometry("420x420")
 
 
-
+Button(window, text = "open new window", command = create_window).pack()
 
 
 #-------------------------------------------------------------

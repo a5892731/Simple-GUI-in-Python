@@ -9,14 +9,17 @@
 
 from tkinter import *
 
-
+def click():
+    text = testarea.get("1.0", END)
+    print(text)
 
 window = Tk() # instantiate an instance of a window
 window.geometry("420x420")
 
-
-
-
+testarea = Text(window)
+testarea.pack()
+button = Button(text = 'click', command = click)
+button.pack()
 
 #-------------------------------------------------------------
 window.mainloop() # place window on computer screen. listen for evants
