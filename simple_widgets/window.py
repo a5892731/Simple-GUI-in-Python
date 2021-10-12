@@ -12,7 +12,7 @@ from tkinter import *
 window = Tk() # instantiate an instance of a window
 window.geometry("420x420")
 window.title("GUI window title")
-icon = PhotoImage(file = "icon.png")
+icon = PhotoImage(file ="icon.png")
 window.iconphoto(True, icon) # icon in upper, left corner of program window
 window.config(background = "#cfd1cf") # "hex color picker" surch in google
 
