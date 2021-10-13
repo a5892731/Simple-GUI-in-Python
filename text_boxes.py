@@ -18,7 +18,7 @@ from PIL import Image
 class SimpleApp(object):
     def __init__(self, **kwargs):
         self.window_width = 500
-        self.window_height = 500
+        self.window_height = 120
         self.window = Tk()
 
         self.update = self.draw().__next__
@@ -26,6 +26,7 @@ class SimpleApp(object):
 
     def draw(self):
         self.draw_window_atributes()
+        self.grid_settings()
         self.draw_on_grid()
         self.window.mainloop()
 
@@ -37,24 +38,24 @@ class SimpleApp(object):
         #self.window.iconphoto(True, icon) # icon in upper, left corner of program window
         self.window.config(background = "#cfd1cf") # "hex color picker" search in google
 
-
+    def grid_settings(self):
+        self.window.columnconfigure(0, minsize =245)
+        self.window.columnconfigure(1, minsize=10)
+        self.window.columnconfigure(2, minsize=245)
+        self.window.rowconfigure(0, minsize =5)
+        self.window.rowconfigure(1, minsize =30)
+        self.window.rowconfigure(2, minsize =30)
 
     def draw_on_grid(self):
-        self.window.columnconfigure(0, minsize =10)
-        self.window.rowconfigure(0, minsize =10)
-
-        entry0 = self.draw_entry_widget().grid(column=0, row=0)  #columnspan=3, rowspan=2
-        entry1 = self.draw_entry_widget().grid(column=1, row=0)
-        entry2 = self.draw_entry_widget().grid(column=0, row=1)
-        entry3 = self.draw_entry_widget().grid(column=1, row=1)
+        entry0 = self.draw_entry_widget().grid(column=0, row=1, sticky=E)
+        entry1 = self.draw_entry_widget().grid(column=2, row=1, sticky=W)
+        entry2 = self.draw_entry_widget().grid(column=0, row=2, sticky=E)
+        entry3 = self.draw_entry_widget().grid(column=2, row=2, sticky=W)
+        # another atributes #columnspan=3, rowspan=2
 
 
-
-
-
-
-    def draw_entry_widget(self, width=10):
-        return Entry(self.window, font=("Arial", 20),  width=width)
+    def draw_entry_widget(self, width=18):
+        return Entry(self.window, font=("Arial", 14),  width=width)
 
 
 #-----------------------------------------------------------------------------------------------------------------------
