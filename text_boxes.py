@@ -1,6 +1,6 @@
 #
 # author: a5892731
-# date: 2021-10-12
+# date: 2021-10-14
 # update:
 #
 # Source:
@@ -9,7 +9,6 @@
 
 
 from tkinter import *
-from tkinter import ttk
 
 import tkinter as tk
 from PIL import ImageTk
@@ -48,14 +47,15 @@ class SimpleApp(object):
 
     def draw_on_grid(self):
         entry0 = self.draw_entry_widget().grid(column=0, row=1, sticky=E)
-        entry1 = self.draw_entry_widget().grid(column=2, row=1, sticky=W)
-        entry2 = self.draw_entry_widget().grid(column=0, row=2, sticky=E)
-        entry3 = self.draw_entry_widget().grid(column=2, row=2, sticky=W)
+        entry1 = self.draw_entry_widget("Wpisz tekst tutaj").grid(column=2, row=1, sticky=W)
+        entry2 = self.draw_entry_widget("Pole nieedytowalne", "", DISABLED).grid(column=0, row=2, sticky=E)
+        entry3 = self.draw_entry_widget("", "*").grid(column=2, row=2, sticky=W)
         # another atributes #columnspan=3, rowspan=2
 
-
-    def draw_entry_widget(self, width=18):
-        return Entry(self.window, font=("Arial", 14),  width=width)
+    def draw_entry_widget(self, text="", show="", state=NORMAL, width=18):
+        textEntry = StringVar()
+        textEntry.set(text)
+        return Entry(self.window, font=("Arial", 14), textvariable=textEntry, show=show, state=state, width=width)
 
 
 #-----------------------------------------------------------------------------------------------------------------------
