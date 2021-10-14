@@ -61,7 +61,7 @@ class SimpleApp(object):
             self.buttons.append(new_button)
 
 
-        self.draw_button_widget(self.bottom_frame, "Koniec", "", 10, "red", "yellow").grid(
+        self.draw_button_widget(self.bottom_frame, "Koniec", quit, 10, "red", "yellow").grid(
             column=10, row=0, columnspan=2)
 
     def draw_button_widget(self, frame, text, command = "", width = 2, bg="black", fg = "white"):
@@ -89,11 +89,11 @@ class SimpleApp(object):
         self.image = ImageTk.PhotoImage(self.my_img)
         return Label(frame, image = self.image).grid(column=0, row=0)
 
-
-
     def button_click(self, pic_num):
         print(pic_num)
         self.draw_picture_widget(self.center_frame, "foto/pic{}.jpg".format(pic_num))
+
+
 
 #-----------------------------------------------------------------------------------------------------------------------
 
