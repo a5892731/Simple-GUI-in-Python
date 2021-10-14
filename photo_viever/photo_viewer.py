@@ -92,7 +92,6 @@ class SimpleApp(object):
         return Label(frame, image = self.image).grid(column=0, row=0)
 
     def button_click(self, pic_num):
-        print(pic_num)
         self.draw_picture_widget(self.center_frame, "foto/pic{}.jpg".format(pic_num))
 
 
