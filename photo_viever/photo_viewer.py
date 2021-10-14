@@ -52,17 +52,19 @@ class SimpleApp(object):
 
         for column in range(12):
             self.bottom_frame.columnconfigure(column, minsize=50)
+        for row in range(3):
+            self.bottom_frame.rowconfigure(row, minsize=5)
 
         self.buttons = []
         for column in range(1, 11):
             new_button = self.draw_button_widget(self.bottom_frame, str(column),
                                                 lambda x=column: self.button_click(x)
-                                                ).grid(column=column-1, row=0)
+                                                ).grid(column=column-1, row=1)
             self.buttons.append(new_button)
 
 
         self.draw_button_widget(self.bottom_frame, "Koniec", quit, 10, "red", "yellow").grid(
-            column=10, row=0, columnspan=2)
+            column=10, row=1, columnspan=2)
 
     def draw_button_widget(self, frame, text, command = "", width = 2, bg="black", fg = "white"):
         return Button(frame, font=("Arial", 8), text=text, width = width, border=3, command=command, bg = bg, fg = fg)
