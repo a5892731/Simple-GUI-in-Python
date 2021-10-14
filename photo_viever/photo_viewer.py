@@ -56,7 +56,7 @@ class SimpleApp(object):
         self.buttons = []
         for column in range(1, 11):
             new_button = self.draw_button_widget(self.bottom_frame, str(column),
-                                                lambda: self.button_click(column)
+                                                lambda x=column: self.button_click(x)
                                                 ).grid(column=column-1, row=0)
             self.buttons.append(new_button)
 
