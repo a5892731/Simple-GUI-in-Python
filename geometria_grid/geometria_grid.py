@@ -43,7 +43,6 @@ class SimpleApp(object):
         #self.window.config(background = "#cfd1cf") # "hex color picker" search in google
 
     def grid_settings(self):
-        self.window.update()
         self.window.columnconfigure(0, minsize =100)
         self.window.columnconfigure(1, minsize=150)
         self.window.columnconfigure(2, minsize=150)
