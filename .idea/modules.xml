@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/GUI.iml" filepath="$PROJECT_DIR$/.idea/GUI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ZSS-service/.idea/ZSS-service.iml" filepath="$PROJECT_DIR$/../ZSS-service/.idea/ZSS-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../zss-py/.idea/zss-py.iml" filepath="$PROJECT_DIR$/../zss-py/.idea/zss-py.iml" />
     </modules>
   </component>
 </project>
